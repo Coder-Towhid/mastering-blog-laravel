@@ -8,7 +8,8 @@ use App\Http\Controllers\loginController;
 
 
 Route::get('/', [HomeController::Class, 'index'])->name('home');
-Route::get('/singleBlog', [SingleBlogController::Class, 'index'])->name('singleBlog');
+Route::get('/single-blog/{id}', [HomeController::Class, 'show'])->name('single-blog');
 Route::get('/blog', [BlogController::Class, 'index'])->name('blog');
+Route::post('/create-blog', [BlogController::Class, 'store'])->name('create-blog');
 Route::get('/login', [loginController::class, 'index'])->name('login');
 

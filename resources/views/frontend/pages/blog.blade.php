@@ -6,22 +6,23 @@
 @section('content')
   <div class="container" >
     <h1 class="text-center text-uppercase mt-5">Create blog</h1>
-    <form>
+    <form method="POST" action="{{ route('create-blog') }}">
+      @csrf
         <div class="form-group mt-5">
           <label for="exampleFormControlInput1 ">Title</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="title">
+          <input type="text" class="form-control" name="title" placeholder="title">
         </div>
         
   
         <div class="form-group mt-3">
           <label for="exampleFormControlInput1 ">Image</label>
-          <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Image URL">
+          <input type="text" class="form-control" name="image_url" placeholder="Image URL">
         </div>
         
   
         <div class="form-group mt-3">
           <label for="exampleFormControlTextarea1">Description</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control" name="description" rows="3"></textarea>
         </div>
         
         
